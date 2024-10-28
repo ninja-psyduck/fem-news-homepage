@@ -1,0 +1,35 @@
+@use "../util" as u;
+
+.new {
+  background-color: var(--c-blue);
+  padding: u.rem(24) u.rem(20);
+
+  &__title {
+    font-style: var(--f-l);
+    color: var(--c-yellow);
+  }
+
+  &__post {
+    //设置元素内边距的结束边，传统：padding-bottom
+    padding-block-end: u.rem(30);
+    //设置元素边框的结束边；不用单独元素设置边框，传统：border-bottom
+    border-block-end: 1px solid var(--c-gray);
+    //伪类选择器
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__headline {
+    display: inline-block;
+    font-size: var(--f-s);
+    font-weight: 800;
+    margin-block-end: u.rem(8);
+    color: var(--c-white);
+  }
+
+  &__description {
+    font-size: var(--f-body);
+    color: var(--c-silver);
+  }
+}

@@ -1,0 +1,95 @@
+@use "./util" as u;
+// 自定义变量（属性）
+:root {
+  --c-white: #fffdfa;
+  --c-blue: #00001a;
+  --c-gray: #5e607a;
+  --c-red: #f15d51;
+  --c-silver: #c5c6ce;
+  --c-yellow: #e9aa52;
+    // CSS 自定义属性中使用 SASS 函数
+  --f-xl: #{clamp(
+      u.rem(40),
+      2.147887323943662rem + 1.5023474178403755vw,
+      u.rem(56)
+    )};
+  --f-l: #{clamp(
+      u.rem(32),
+      1.823943661971831rem + 0.7511737089201878vw,
+      u.rem(40)
+    )};
+  --f-m: #{u.rem(32)};
+  --f-s: #{u.rem(20)};
+  --f-xs: #{u.rem(18)};
+  --f-body: #{u.rem(15)};
+}
+
+//Boilerplate
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+/* 将 box-sizing 属性继承给所有的元素，包括元素的伪元素（::before 和 ::after）。
+这样一来，页面中的所有元素都会采用 border-box 盒模型。*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-size: var(--f-body);
+  // 根据设计稿
+  line-height: 1.7;
+  color: var(--c-gray);
+  padding-block-end: 50vh;
+}
+/*字体大不需要太大的行高*/
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+  color: var(--c-blue);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  //保持图片比例
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+// min() 是 CSS 函数，接收多个值，并返回其中的最小值。
+// 它在响应式布局中很有用，可以根据不同屏幕宽度限制宽度。
+// .wrapper 元素的最终宽度取两个值中的最小值
+// u.rem(1110)（最大宽度，大约是 1110px 的 rem 转换值）
+// 或者 calc(100% - u.rem(32))（减去左右边距）
+.wrapper {
+  width: min(u.rem(1110), calc(100% - u.rem(32)));
+  //居中
+  margin-inline: auto;
+}
