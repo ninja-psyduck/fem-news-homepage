@@ -7,7 +7,7 @@
   --c-red: #f15d51;
   --c-silver: #c5c6ce;
   --c-yellow: #e9aa52;
-    // CSS 自定义属性中使用 SASS 函数
+  // CSS 自定义属性中使用 SASS 函数
   --f-xl: #{clamp(
       u.rem(40),
       2.147887323943662rem + 1.5023474178403755vw,
@@ -65,11 +65,14 @@ p {
 
 a {
   text-decoration: none;
+  //short-hand
+  transition: 150ms ease-in-out;
+
 }
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   //保持图片比例
   height: auto;
 }
@@ -92,4 +95,14 @@ li {
   width: min(u.rem(1110), calc(100% - u.rem(32)));
   //居中
   margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  gap: u.rem(64);
+  
+  @media (width>=u.em(1100)) {
+    grid-template-columns: repeat();
+    grid-template-rows: repeat();
+  }
 }

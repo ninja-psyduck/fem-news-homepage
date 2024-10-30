@@ -1,6 +1,9 @@
 @use "../util" as u;
 
 .feature {
+  display: grid;
+  gap: u.rem(24);
+
   &__image {
   }
   &__headline {
@@ -10,6 +13,8 @@
   &__description {
   }
   &__button {
+    //默认是 stretch
+    justify-self: start;
     //继承inline和block的特性
     display: inline-block;
     background-color: var(--c-red);
@@ -20,5 +25,9 @@
     font-weight: 700;
     text-transform: uppercase;
     padding: u.rem(12) u.rem(32);
+
+    &:hover {
+      background-color: var(--c-blue);
+    }
   }
 }
