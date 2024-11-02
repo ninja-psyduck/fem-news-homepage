@@ -67,7 +67,7 @@ a {
   text-decoration: none;
   //short-hand
   transition: 150ms ease-in-out;
-
+  transition-property: color, background-color;
 }
 
 img {
@@ -100,9 +100,11 @@ li {
 .grid {
   display: grid;
   gap: u.rem(64);
-  
+
+  //媒体查询的时候使用 em()
   @media (width>=u.em(1100)) {
-    grid-template-columns: repeat();
-    grid-template-rows: repeat();
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: u.rem(300) auto auto;
+    gap: u.rem(30);
   }
 }

@@ -1,0 +1,47 @@
+@use "../util" as u;
+//bem block name
+.nav {
+  button {
+    background: none;
+    border: none;
+    //去掉默认的padding
+    padding: 0;
+    @media (width>=u.em(1100)) {
+      display: none;
+    }
+  }
+
+  &__open {
+  }
+
+  &__overlay {
+    //默认隐藏
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: var(--c-blue);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  &__content {
+    @media (width<u.em(1100)) {
+      display: none;
+      position: fixed;
+      // short-hand property 上右下左
+      inset: 0 0 0 u.rem(120);
+      background-color: var(--c-white);
+      padding: u.rem(30);
+      //将元素向右移动到视窗的右侧边缘
+      translate: 100vw 0;
+      transition: translate 500ms ease-in-out;
+    }
+  }
+
+  &__close {
+    display: block;
+    //离左边的空间最大
+    margin-inline-start: auto;
+    margin-block-end: u.rem(86);
+  }
+}

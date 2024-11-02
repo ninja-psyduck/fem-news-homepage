@@ -4,6 +4,10 @@
   background-color: var(--c-blue);
   padding: u.rem(24) u.rem(20);
 
+  @media (width>=u.em(1100)) {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
   &__title {
     font-style: var(--f-l);
     color: var(--c-yellow);

@@ -4,14 +4,37 @@
   display: grid;
   gap: u.rem(24);
 
+  @media (width>=u.em(1100)) {
+    gap: u.rem(30);
+    //Subgrid 允许在子元素上继续定义网格，从而创建更加复杂的布局结构
+    //Subgrid 可以避免重复定义网格轨道，从而简化代码。
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+
+  &__picture {
+    @media (width>=u.em(1100)) {
+      grid-column: 1/3;
+    }
+  }
+
   &__image {
   }
+
   &__headline {
     font-size: var(--f-xl);
     font-weight: 800;
   }
+
   &__description {
+    p{
+    margin-block-end: u.rem(30);
+
+    }
   }
+  
   &__button {
     //默认是 stretch
     justify-self: start;
