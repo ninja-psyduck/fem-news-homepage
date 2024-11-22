@@ -6,12 +6,19 @@
     border: none;
     //去掉默认的padding
     padding: 0;
-    @media (width>=u.em(1100)) {
+    @media (width>=u.em(1110)) {
       display: none;
     }
   }
 
-  &__open {
+  &__open[aria-expanded="true"] {
+    ~ .nav__content {
+      translate: 0;
+    }
+
+    ~ .nav__overlay {
+      opacity: 0.5;
+    }
   }
 
   &__overlay {
@@ -22,10 +29,18 @@
     background-color: var(--c-blue);
     opacity: 0;
     transition: opacity 300ms ease-in-out;
+    pointer-events: none;
+  }
+
+  &__close {
+    display: block;
+    //离左边的空间最大
+    margin-inline-start: auto;
+    margin-block-end: u.rem(86);
   }
 
   &__content {
-    @media (width<u.em(1100)) {
+    @media (width<u.em(1110)) {
       display: none;
       position: fixed;
       // short-hand property 上右下左
@@ -36,12 +51,5 @@
       translate: 100vw 0;
       transition: translate 500ms ease-in-out;
     }
-  }
-
-  &__close {
-    display: block;
-    //离左边的空间最大
-    margin-inline-start: auto;
-    margin-block-end: u.rem(86);
   }
 }

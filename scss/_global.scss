@@ -102,9 +102,13 @@ li {
   gap: u.rem(64);
 
   //媒体查询的时候使用 em()
-  @media (width>=u.em(1100)) {
+  @media (width>=u.em(1110)) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: u.rem(300) auto auto;
     gap: u.rem(30);
   }
+}
+
+.noscroll {
+  overflow-y: hidden;
 }

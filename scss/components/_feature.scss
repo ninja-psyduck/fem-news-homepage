@@ -4,7 +4,7 @@
   display: grid;
   gap: u.rem(24);
 
-  @media (width>=u.em(1100)) {
+  @media (width>=u.em(1110)) {
     gap: u.rem(30);
     //Subgrid 允许在子元素上继续定义网格，从而创建更加复杂的布局结构
     //Subgrid 可以避免重复定义网格轨道，从而简化代码。
@@ -15,7 +15,7 @@
   }
 
   &__picture {
-    @media (width>=u.em(1100)) {
+    @media (width>=u.em(1110)) {
       grid-column: 1/3;
     }
   }

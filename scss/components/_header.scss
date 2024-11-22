@@ -5,7 +5,7 @@
   justify-content: space-between;
   padding-block: u.rem(30);
 
-  @media (width>=u.em(1100)) {
+  @media (width>=u.em(1110)) {
     // 一般用 padding 来设置父元素和子元素的距离
     // 用 margin 来设置兄弟元素之间的距离
     //padding-block-start, padding-block-end
@@ -24,11 +24,11 @@
     flex-direction: column;
     gap: u.rem(24);
 
-    @media (width>=u.em(1100)) {
+    @media (width>=u.em(1110)) {
       flex-direction: row;
       gap: u.rem(40);
     }
-    //因为 flex-direction 默认是 row，如果媒体查询是 @media (width < u.em(1100)) 可以省下flex-direction: row 这行。
+    //因为 flex-direction 默认是 row，如果媒体查询是 @media (width < u.em(1110)) 可以省下flex-direction: row 这行。
   }
 
   &__link {

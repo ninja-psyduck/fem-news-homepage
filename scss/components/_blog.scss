@@ -3,7 +3,7 @@
 .blog {
   display: grid;
   gap: u.rem(30);
-  @media (width>=u.em(1100)) {
+  @media (width>=u.em(1110)) {
     grid-template-columns: subgrid;
     grid-column: 1/-1;
     padding-block-start: u.rem(40);
